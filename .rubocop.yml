@@ -1,0 +1,36 @@
+# frozen_string_literal: true
+
+# RuboCop configuration for simple-mcp gem
+# Exactly matches BuoySoftware guides with gem-specific customizations
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - vendor/bundle/**/*
+    - node_modules/**/*
+    - db/schema.rb
+    - bin/**/*
+
+plugins:
+  - rubocop-performance
+
+# Inherit from BuoySoftware guides
+inherit_from:
+  - https://raw.githubusercontent.com/BuoySoftware/guides/main/ruby/.rubocop.yml
+
+inherit_mode:
+  merge:
+    - Exclude
+
+# Gem-specific overrides only where necessary
+Metrics/BlockLength:
+  CountComments: true
+  Max: 25
+  Exclude:
+    - "spec/**/*"
+
+Layout/LineLength:
+  Max: 100
+  SplitStrings: true
+  Exclude:
+    - "spec/**/*"

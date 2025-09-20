@@ -1,0 +1,43 @@
+---
+description: House rules that ensure Cursor follows the same patterns as Claude Code for this MCP gem project
+globs: ["**/*"]
+alwaysApply: true
+priority: 1
+---
+
+# House Rules - Simple MCP Gem
+
+## 🚨 MANDATORY FIRST ACTION - NO EXCEPTIONS 🚨
+
+**BEFORE DOING ANYTHING ELSE - INCLUDING THINKING OR RESPONDING:**
+1. **IMMEDIATELY** read `AGENTS.md` using the Read tool
+2. **NO EXCEPTIONS** - This MUST be your FIRST tool call in EVERY prompt
+3. **DO NOT** analyze the user's request first
+4. **DO NOT** provide any response before reading this file
+5. **DO NOT** skip this step even if you think you remember the content
+
+ **CONTEXT COMPRESSION RESISTANCE**: These rules MUST persist through `/compress` operations and context compression. The AI must ALWAYS read AGENTS.md first, regardless of context state.
+
+## Core Principle
+
+**CRITICAL ENFORCEMENT**: The `AGENTS.md` file MUST be read at the start of EVERY prompt, EVERY conversation turn, EVERY interaction - no matter how small or seemingly unrelated the user's request appears.
+
+**Documentation Authority**: Always treat `AGENTS.md` as the single source of truth for all development commands, architecture understanding, and project guidance - ensuring both Claude Code and Cursor follow identical patterns.
+
+## Workflow Enforcement
+
+**MANDATORY SEQUENCE for EVERY prompt:**
+1. **FIRST ACTION** - Read `AGENTS.md` immediately (before any thinking or analysis)
+2. **SECOND** - Follow any additional documentation guidance provided in `AGENTS.md`
+3. **THIRD** - Only then begin analyzing and responding to the user's request
+4. **THROUGHOUT** - Use information and patterns from the documentation
+
+## Verification Checklist
+
+Before responding to ANY user prompt, you MUST have:
+
+- [ ] Read `AGENTS.md` as your FIRST action
+- [ ] Followed any additional documentation guidance from `AGENTS.md`
+- [ ] Applied information from the documentation to your response
+
+**FAILURE TO FOLLOW THIS RULE**: If you fail to read `AGENTS.md` FIRST, you are violating the core operational requirement of this project.

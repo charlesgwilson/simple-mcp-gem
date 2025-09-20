@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "optparse"
+require_relative "../lib/simple_mcp"
+
+# Parse command line options
+OptionParser.new do |opts|
+  opts.banner = "Usage: simple-mcp [options]"
+
+  opts.on("-h", "--help", "Show this help message") do
+    puts opts
+    exit
+  end
+
+  opts.on("-v", "--version", "Show version") do
+    puts SimpleMcp::VERSION
+    exit
+  end
+end.parse!
+
+# Start the simple MCP server
+SimpleMcp.start_server
